@@ -1,4 +1,8 @@
 Analysis of metagenomics data (shotgun)
 Steps:
 step1: Project dir set up
-step2: 
+step2: Environment set-up
+	- mamba installation
+	- packages: from Bioconda
+code: 	mamba create -n meta1
+	mamba install -c bioconda fastp fastqc kraken2 checkm maxbin spades

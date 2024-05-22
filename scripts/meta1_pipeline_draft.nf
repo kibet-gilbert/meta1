@@ -5,9 +5,18 @@ nextflow.enable.dsl=2
 params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/*_R{1,2}.fastq.gz'
 reads = Channel.fromFilePairs(params.reads, checkIfExists:true)
 println(reads.view())
+params.kraken2_db_human = '/home/gkibet/bioinformatics/training/meta1/data/databases/kraken2_human_db/'
+kraken2_db_human = Channel.fromPath(params.kraken2_db_human, checkIfExists:true)
 
-// params.kraken2_db_human = './data/databases/kraken2_human_db/'
-// params.kraken2_db_viral = './data/databases/k2_viral_20240112/'
+params.kraken2_db_viral = './data/databases/k2_viral_20240112/'
+kraken2_db_viral = Channel.fromPath(params.kraken2_db_viral, checkIfExists:true)
+
+params.taxonomy='/home/gkibet/bioinformatics/training/meta1/data/databases/kronaDB/taxonomy/'
+taxonomy = Channel.fromPath(params.taxonomy, checkIfExists:true)
+
+
+
+
 // params.krona_db_taxonomy = './data/databases/kronaDB/taxonomy'
 // params.outputDir = './results'
 
@@ -43,8 +52,8 @@ process FastP {
     script:
     """
     fastp \\
-        --in1 $reads[1] \\
-        --in2 $reads[2] \\
+        --in1 ${reads[0]} \\
+        --in2 ${reads[1]} \\
         --out1 ${sample_id}-trim_R1.fastq.gz \\
         --out2 ${sample_id}-trim_R2.fastq.gz \\
         --html ${sample_id}.fastp.html \\
@@ -56,93 +65,101 @@ process FastP {
     """
 }
 
-// process Kraken2Host {
-//     publishDir "${params.outputDir}/kraken2", mode: 'copy'
+process Kraken2Host {
+    // publishDir "${params.outputDir}/kraken2", mode: 'copy'
+    tag "$sample_id"
+
+    input:
+    tuple val(sample_id), path(trimmed_reads)
+    path(kraken2_db_human)
+
+    output:
+    tuple val(sample_id), path("*.nohost{.,_}*"), emit: nohost_reads
+    tuple val(sample_id), path("*.report.txt"), emit: kraken_hostmap_report1
+    tuple val(sample_id), path("*.kraken2.out"), emit: kraken_hostmap_report2
+
+    script:
+    """
+    kraken2 --db ${kraken2_db_human} --threads 4 \\
+            --unclassified-out ${sample_id}.nohost#.fastq \\
+            --classified-out ${sample_id}.host#.fastq \\
+            --report ${sample_id}.kraken2.report.txt \\
+            --output ${sample_id}.kraken2.out \\
+            --gzip-compressed --report-zero-counts \\
+            --paired $trimmed_reads
+    """
+}
+
+process Kraken2Taxonomy {
+    tag "$sample_id"
     
-//     input:
-//     path trimmed_fastq1 from FastP.out[0]
-//     path trimmed_fastq2 from FastP.out[1]
+    input:
+    tuple val(sample_id), path(nohost_reads)
+    path(kraken2_db_viral)
 
-//     output:
-//     path "${params.outputDir}/kraken2/SRR28624259.nohost_1.fastq"
-//     path "${params.outputDir}/kraken2/SRR28624259.nohost_2.fastq"
+    output:
+    tuple val(sample_id), path("*.classified{.,_}*"), emit: classified_reads
+    tuple val(sample_id), path("*_kreport.txt"), emit: kraken_viral_report1
+    tuple val(sample_id), path("*_kraken2.out"), emit: kraken_viral_report2
 
-//     script:
-//     """
-//     kraken2 --db ${params.kraken2_db_human} --threads 4 \
-//             --unclassified-out ${params.outputDir}/kraken2/SRR28624259.nohost#.fastq \
-//             --classified-out ${params.outputDir}/kraken2/SRR28624259.host#.fastq \
-//             --report ${params.outputDir}/kraken2/SRR28624259.kraken2.report.txt \
-//             --output ${params.outputDir}/kraken2/SRR28624259.kraken2.out \
-//             --gzip-compressed --report-zero-counts \
-//             --paired $trimmed_fastq1 $trimmed_fastq2
-//     """
-// }
+    script:
+    """
+    kraken2 --db ${kraken2_db_viral} --threads 4 \\
+            --unclassified-out ${sample_id}.unclassified#.fastq \\
+            --classified-out ${sample_id}.classified#.fastq \\
+            --report ${sample_id}_tax_kreport.txt \\
+            --output ${sample_id}_tax_kraken2.out \\
+            --report-zero-counts --paired $nohost_reads
+    """
+}
 
-// process Kraken2Taxonomy {
-//     publishDir "${params.outputDir}/kraken2", mode: 'copy'
+process KronaTools {
+    tag "$sample_id"  
     
-//     input:
-//     path nohost_fastq1 from Kraken2Host.out[0]
-//     path nohost_fastq2 from Kraken2Host.out[1]
-
-//     output:
-//     path "${params.outputDir}/kraken2/SRR28624259.classified_1.fastq"
-//     path "${params.outputDir}/kraken2/SRR28624259.classified_2.fastq"
-
-//     script:
-//     """
-//     kraken2 --db ${params.kraken2_db_viral} --threads 4 \
-//             --unclassified-out ${params.outputDir}/kraken2/SRR28624259.unclassified#.fastq \
-//             --classified-out ${params.outputDir}/kraken2/SRR28624259.classified#.fastq \
-//             --report ${params.outputDir}/kraken2/SRR28624259_tax_kreport.txt \
-//             --output ${params.outputDir}/kraken2/SRR28624259_tax_kraken2.out \
-//             --report-zero-counts --paired $nohost_fastq1 $nohost_fastq2
-//     """
-// }
-
-// process KronaTools {
-//     publishDir "${params.outputDir}/krona", mode: 'copy'
+    input:
+    tuple val(sample_id), path(kraken_viral_report2)
+    path(taxonomy)
     
-//     input:
-//     path kraken2_output from Kraken2Taxonomy.out[2]
+    output:
+    tuple val(sample_id), path("*.html"), emit: krona_html
+    // path "${params.outputDir}/krona/SRR28624259_taxonomy.krona.html"
 
-//     output:
-//     path "${params.outputDir}/krona/SRR28624259_taxonomy.krona.html"
+    script:
+    //wget https://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz -O ${params.krona_db_taxonomy}/taxdump.tar.gz
+    //ktUpdateTaxonomy.sh --only-build ${params.krona_db_taxonomy}
+    """    
+    cat $kraken_viral_report2 | cut -f 2,3 > ${sample_id}_kraken2.krona
+    ktImportTaxonomy -tax ${taxonomy} \\
+                     -o ${sample_id}_taxonomy.krona.html \\
+                     ${sample_id}_kraken2.krona
+    """
+}
 
-//     script:
-//     """
-//     mkdir -p ${params.krona_db_taxonomy}
-//     wget https://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz -O ${params.krona_db_taxonomy}/taxdump.tar.gz
-//     ktUpdateTaxonomy.sh --only-build ${params.krona_db_taxonomy}
-//     cat $kraken2_output | cut -f 2,3 > ${params.outputDir}/krona/SRR28624259_kraken2.krona
-//     ktImportTaxonomy -tax ${params.krona_db_taxonomy} \
-//                      -o ${params.outputDir}/krona/SRR28624259_taxonomy.krona.html \
-//                      ${params.outputDir}/krona/SRR28624259_kraken2.krona
-//     """
-// }
-
-// process MetaSPAdes {
-//     publishDir "${params.outputDir}/metaspades", mode: 'copy'
+process MetaSPAdes {
+    tag "$sample_id"     
     
-//     input:
-//     path classified_fastq1 from Kraken2Taxonomy.out[0]
-//     path classified_fastq2 from Kraken2Taxonomy.out[1]
+    input:
+    tuple val(sample_id), path(nohost_reads)
 
-//     output:
-//     path "${params.outputDir}/metaspades/"
+    output:
+    tuple val(sample_id), path("*_contigs.fasta"), emit: contigs
+   // path "${params.outputDir}/metaspades/"
 
-//     script:
-//     """
-//     spades.py --isolate --threads 4 --memory 8 \
-//               -1 $classified_fastq1 -2 $classified_fastq2 \
-//               -o ${params.outputDir}/metaspades
-//     mv ${params.outputDir}/metaspades/assembly_graph_with_scaffolds.gfa ${params.outputDir}/metaspades/SPAdes-SRR28624259_graph.gfa
-//     mv ${params.outputDir}/metaspades/scaffolds.fasta ${params.outputDir}/metaspades/SPAdes-SRR28624259_scaffolds.fasta
-//     mv ${params.outputDir}/metaspades/contigs.fasta ${params.outputDir}/metaspades/SPAdes-SRR28624259_contigs.fasta
-//     mv ${params.outputDir}/metaspades/spades.log ${params.outputDir}/metaspades/SPAdes-SRR28624259.log
-//     """
-// }
+    script:
+    """
+    spades.py \\
+        --isolate \\
+        --threads 4 \\
+        --memory 8 \\
+        -1 ${nohost_reads[0]} \\
+        -2 ${nohost_reads[1]} \\
+        -o .
+    mv assembly_graph_with_scaffolds.gfa SPAdes-${sample_id}_graph.gfa
+    mv scaffolds.fasta SPAdes-${sample_id}_scaffolds.fasta
+    mv contigs.fasta SPAdes-${sample_id}_contigs.fasta
+    mv spades.log SPAdes-${sample_id}.log
+    """
+}
 
 // process Kraken2Contigs {
 //     publishDir "${params.outputDir}/kraken2", mode: 'copy'
@@ -184,10 +201,12 @@ process FastP {
 workflow {
     FastQC(reads)
     FastP(reads)
-    // Kraken2Host()
-    // Kraken2Taxonomy()
-    // KronaTools()
-    // MetaSPAdes()
+    Kraken2Host(FastP.out.trimmed_reads, kraken2_db_human)
+    Kraken2Taxonomy(Kraken2Host.out.nohost_reads, kraken2_db_viral)
+    KronaTools(Kraken2Taxonomy.out.kraken_viral_report2, taxonomy)
+    MetaSPAdes(Kraken2Host.out.nohost_reads)
+    // println(Kraken2Host.out.nohost_reads.view())
+    // println(Kraken2Host.out.nohost_reads.collect().view())
     // Kraken2Contigs()
     // KronaContigs()
 }

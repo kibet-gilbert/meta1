@@ -1,0 +1,39 @@
+2024-05-21 14:47:48	-	marvelous_mccarthy	-	571942173dfea5dfe996fa2e7302b42e	a7c13ccd-7b8f-4761-8516-29052c2026be	nextflow run ./scripts/meta1_pipeline_draft.nf
+2024-05-21 14:48:18	-	infallible_torricelli	-	571942173dfea5dfe996fa2e7302b42e	4cf22fd7-dc03-49a9-a456-e525c603a5f4	nextflow run ./scripts/meta1_pipeline_draft.nf
+2024-05-21 14:51:20	-	nasty_mercator	-	571942173dfea5dfe996fa2e7302b42e	bb405016-1947-4bdd-b9b6-46f89f832cd8	nextflow run ./scripts/meta1_pipeline_draft.nf
+2024-05-21 14:59:40	-	awesome_lumiere	-	dd7f34efaf601d8f081456fcb2e08efb	50b0fe4d-ef0a-4fc9-aec0-a10dc4b3b73c	nextflow run ./scripts/meta1_pipe_draft.nf
+2024-05-21 15:04:01	-	friendly_austin	-	8ca24ac1751ae77c4fd61d5f213b5571	7974ee34-2772-4990-b3d3-ceb35781de07	nextflow run ./scripts/meta1_pipe_draft.nf
+2024-05-21 15:06:10	-	dreamy_wilson	-	571942173dfea5dfe996fa2e7302b42e	22d4e485-621a-4b86-b1ef-24f939c1e957	nextflow run ./scripts/meta1_pipeline_draft.nf
+2024-05-21 15:13:57	-	high_lattes	-	848d75544874fcd64b3f9ffe30d7f2a1	6a9b0a28-aa18-4890-924f-56352a30e69b	nextflow run ./scripts/meta1_pipeline_draft.nf
+2024-05-21 15:17:26	-	trusting_leibniz	-	5f2108c3f1dc5f9822797c625ee7a342	c1279104-3d89-4e66-ad31-ed21fe62f59a	nextflow run scripts/meta1_pipeline_draft.nf
+2024-05-21 15:17:55	4.5s	hungry_ritchie	OK	8ed35a6730e062cf7c3ef6b65f0d149e	04d69328-6821-46f8-b977-e82d10907614	nextflow run scripts/meta1_pipeline_draft.nf
+2024-05-21 15:22:30	8.6s	big_minsky	ERR	5152ea27db2c83851728399f9aca19dd	95bb4023-864d-4cc8-91b4-cfb948ddf351	nextflow run scripts/meta1_pipeline_draft.nf
+2024-05-21 15:33:14	1m 9s	clever_archimedes	OK	2c0818996434e7b716a90c9fdea8bfc1	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf
+2024-05-21 15:36:12	6.5s	voluminous_lichterman	OK	e9f6cf60d8248caf824a9a7b2e92439d	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:47:33	-	sick_becquerel	-	491b667bddf5be021ca1330d085eeda8	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:48:46	5.4s	ridiculous_easley	ERR	797a0fe9bd0f1de9da719c16b338bb36	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:50:51	7s	nostalgic_coulomb	ERR	e4c398cdb853c6e865da5a66d5a76cda	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:51:43	6.1s	elated_hodgkin	ERR	cd0d7f24c9306003ba4121eb81a75752	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:52:51	38.8s	agitated_roentgen	ERR	841cd1d0c278a57a224b0d3748e6a496	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-21 15:55:14	2m 6s	soggy_carlsson	ERR	f5e90a29dbae17a11b3cfcff60d3ac2f	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 09:45:57	8.3s	exotic_dijkstra	OK	dffff40540677f508a380ffbbbff68b5	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:05:43	6.3s	serene_heyrovsky	OK	d57de402415397bbab90ecc9a33e2ca7	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:09:35	18.7s	big_gilbert	ERR	01b483fdc15c7fedc363f2e03002ecb7	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:16:09	16.8s	nasty_allen	ERR	de88616d9736ae89f2d45924968b0f54	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:17:51	29.7s	modest_sammet	OK	21970641a4fc8dea20b176e0f779cb02	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:30:09	24.4s	insane_noyce	ERR	273fafbdff8b254100a8ca38d045f697	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 10:32:08	9.3s	high_monod	OK	904fb5ec20469bf86225188f7ed95dcc	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 11:55:56	1m 14s	angry_brattain	OK	ae2e493a994a2827dec6356eaa54a11e	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 12:27:58	9.3s	agitated_poincare	ERR	3c5536fcf4a69a443ab801cdcf78ab67	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 12:37:22	8.5s	evil_kowalevski	ERR	9ace18c703d76f7b547c487bb824891c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 12:42:52	9.4s	mad_picasso	ERR	84724a60bc04ce67a59b5a22fe49253e	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 12:47:38	1m 9s	determined_wilson	OK	72240564f7608ef137cbca6cf1c05547	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 12:56:51	8.1s	silly_rutherford	OK	d9340dab77ed9a15807dcc123c3a3ed9	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:00:04	7.7s	adoring_kare	ERR	48b97605f6c8f5442e97124fab306351	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:01:47	9s	ecstatic_kirch	ERR	97e33c9b65c99b257c2ff9d7a05b412b	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:07:19	10.3s	condescending_volta	ERR	7046fa99fc52f3134a6621f0dce0b45b	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:10:51	7.5s	pedantic_watson	OK	7a15090fa6c48d99449ae00b303c6ded	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:12:14	9.5s	lonely_babbage	ERR	43ddbcfcfb048eadc147fac411ed1881	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:13:16	55.7s	nauseous_kalam	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:14:36	2m 58s	crazy_heisenberg	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 13:17:48	14m 20s	romantic_kay	OK	bf50fabaea611983f9e7bb81268639cc	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume

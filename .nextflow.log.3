@@ -1,0 +1,142 @@
+May-22 13:12:10.494 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -resume
+May-22 13:12:10.900 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+May-22 13:12:11.017 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+May-22 13:12:11.061 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-22 13:12:11.065 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-22 13:12:11.081 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+May-22 13:12:11.125 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-22 13:12:11.223 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-22 13:12:11.227 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-22 13:12:11.337 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-22 13:12:14.226 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+May-22 13:12:14.289 [main] INFO  nextflow.cli.CmdRun - Launching `scripts/meta1_pipeline_draft.nf` [lonely_babbage] DSL2 - revision: 43ddbcfcfb
+May-22 13:12:14.291 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-22 13:12:14.291 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-22 13:12:14.335 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/gkibet/.nextflow/secrets/store.json
+May-22 13:12:14.354 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1b6924cb] - activable => nextflow.secret.LocalSecretsProvider@1b6924cb
+May-22 13:12:14.616 [main] DEBUG nextflow.Session - Session UUID: 6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21
+May-22 13:12:14.617 [main] DEBUG nextflow.Session - Run name: lonely_babbage
+May-22 13:12:14.619 [main] DEBUG nextflow.Session - Executor pool size: 8
+May-22 13:12:14.659 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-22 13:12:14.821 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC (21:37 EAST)
+  System: Linux 6.5.0-28-generic
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 376942@ilri [127.0.1.1]
+  CPUs: 8 - Mem: 15.4 GB (1.7 GB) - Swap: 2 GB (5.1 MB)
+May-22 13:12:15.033 [main] DEBUG nextflow.Session - Work-dir: /home/gkibet/bioinformatics/training/meta1/work [ext2/ext3]
+May-22 13:12:15.034 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/gkibet/bioinformatics/training/meta1/scripts/bin
+May-22 13:12:15.097 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-22 13:12:15.161 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-22 13:12:15.281 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-22 13:12:15.339 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+May-22 13:12:15.934 [main] DEBUG nextflow.Session - Session start
+May-22 13:12:18.854 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-22 13:12:19.285 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
+May-22 13:12:19.813 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastQC` matches process FastQC
+May-22 13:12:19.857 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:19.857 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:19.887 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-22 13:12:19.909 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+May-22 13:12:20.309 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastP` matches process FastP
+May-22 13:12:20.316 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:20.317 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:20.352 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Host` matches process Kraken2Host
+May-22 13:12:20.360 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:20.360 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:20.403 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Taxonomy` matches process Kraken2Taxonomy
+May-22 13:12:20.413 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:20.414 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:20.450 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaTools` matches process KronaTools
+May-22 13:12:20.454 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:20.454 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:20.488 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MetaSPAdes` matches process MetaSPAdes
+May-22 13:12:20.492 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:12:20.493 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:12:20.526 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
+May-22 13:12:20.565 [main] INFO  nextflow.script.BaseScript - DataflowVariable(value=null)
+May-22 13:12:20.570 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Kraken2Taxonomy, KronaTools, MetaSPAdes, FastP, FastQC, Kraken2Host
+May-22 13:12:20.575 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
+May-22 13:12:20.610 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/; pattern: *_R{1,2}.fastq.gz; options: [checkIfExists:true]
+May-22 13:12:20.625 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastQC
+May-22 13:12:20.628 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastP
+May-22 13:12:20.637 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Host
+May-22 13:12:20.639 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Taxonomy
+May-22 13:12:20.639 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaTools
+May-22 13:12:20.639 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MetaSPAdes
+May-22 13:12:20.640 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-22 13:12:20.640 [main] DEBUG nextflow.Session - Session await
+May-22 13:12:21.713 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [cf/ff3524] Cached process > FastQC (SRR28624259)
+May-22 13:12:21.713 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [9b/f9f865] Cached process > FastP (SRR28624259)
+May-22 13:12:21.834 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [36/0ca376] Cached process > Kraken2Host (SRR28624259)
+May-22 13:12:21.847 [Actor Thread 9] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-22 13:12:21.949 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [72/203972] Cached process > Kraken2Taxonomy (SRR28624259)
+May-22 13:12:22.142 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [7e/94db1c] Cached process > KronaTools (SRR28624259)
+May-22 13:12:22.203 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:12:22.210 [Task submitter] INFO  nextflow.Session - [4e/54c711] Submitted process > MetaSPAdes (SRR28624259)
+May-22 13:12:23.184 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: MetaSPAdes (SRR28624259); status: COMPLETED; exit: 255; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/4e/54c711e58df10836b569bae905a725]
+May-22 13:12:23.197 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MetaSPAdes (SRR28624259); work-dir=/home/gkibet/bioinformatics/training/meta1/work/4e/54c711e58df10836b569bae905a725
+  error [nextflow.exception.ProcessFailedException]: Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (255)
+May-22 13:12:23.239 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'MetaSPAdes (SRR28624259)'
+
+Caused by:
+  Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (255)
+
+Command executed:
+
+  spades.py \
+      --isolate \
+      --threads 4 \
+      --memory 8 \
+      -1 SRR28624259.nohost_2.fastq \
+      -2 null \
+      -o .
+  mv assembly_graph_with_scaffolds.gfa SPAdes-SRR28624259_graph.gfa
+  mv scaffolds.fasta SPAdes-SRR28624259_scaffolds.fasta
+  mv contigs.fasta SPAdes-SRR28624259_contigs.fasta
+  mv spades.log SPAdes-SRR28624259.log
+
+Command exit status:
+  255
+
+Command output:
+  
+  
+  == Warning ==  output dir is not empty! Please, clean output directory before run.
+  
+  
+  
+  
+  == Error ==  file not found: null (right reads, library number: 1, library type: paired-end)
+  
+  In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+  or report an issue on our GitHub repository github.com/ablab/spades
+  Please provide us with params.txt and spades.log files from the output directory.
+
+Command error:
+  
+  
+  == Warning ==  output dir is not empty! Please, clean output directory before run.
+  
+  
+  
+  
+  == Error ==  file not found: null (right reads, library number: 1, library type: paired-end)
+  
+  In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+  or report an issue on our GitHub repository github.com/ablab/spades
+  Please provide us with params.txt and spades.log files from the output directory.
+
+Work dir:
+  /home/gkibet/bioinformatics/training/meta1/work/4e/54c711e58df10836b569bae905a725
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+May-22 13:12:23.248 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-22 13:12:23.261 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (255)
+May-22 13:12:23.342 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-22 13:12:23.383 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=5; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=900ms; cachedDuration=4m 41s;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+May-22 13:12:23.513 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-22 13:12:23.591 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

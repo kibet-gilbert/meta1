@@ -1,0 +1,98 @@
+May-22 13:17:43.126 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -resume
+May-22 13:17:43.564 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+May-22 13:17:43.671 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+May-22 13:17:43.716 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-22 13:17:43.720 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-22 13:17:43.735 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+May-22 13:17:43.786 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-22 13:17:43.881 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-22 13:17:43.885 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-22 13:17:44.041 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-22 13:17:47.936 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+May-22 13:17:48.018 [main] INFO  nextflow.cli.CmdRun - Launching `scripts/meta1_pipeline_draft.nf` [romantic_kay] DSL2 - revision: bf50fabaea
+May-22 13:17:48.020 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-22 13:17:48.020 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-22 13:17:48.066 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/gkibet/.nextflow/secrets/store.json
+May-22 13:17:48.084 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1b6924cb] - activable => nextflow.secret.LocalSecretsProvider@1b6924cb
+May-22 13:17:48.360 [main] DEBUG nextflow.Session - Session UUID: 6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21
+May-22 13:17:48.361 [main] DEBUG nextflow.Session - Run name: romantic_kay
+May-22 13:17:48.363 [main] DEBUG nextflow.Session - Executor pool size: 8
+May-22 13:17:48.414 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-22 13:17:48.527 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC (21:37 EAST)
+  System: Linux 6.5.0-28-generic
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 378040@ilri [127.0.1.1]
+  CPUs: 8 - Mem: 15.4 GB (2.3 GB) - Swap: 2 GB (4.9 MB)
+May-22 13:17:48.711 [main] DEBUG nextflow.Session - Work-dir: /home/gkibet/bioinformatics/training/meta1/work [ext2/ext3]
+May-22 13:17:48.712 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/gkibet/bioinformatics/training/meta1/scripts/bin
+May-22 13:17:48.765 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-22 13:17:48.818 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-22 13:17:48.929 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-22 13:17:48.987 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+May-22 13:17:49.636 [main] DEBUG nextflow.Session - Session start
+May-22 13:17:52.861 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-22 13:17:53.345 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
+May-22 13:17:53.902 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastQC` matches process FastQC
+May-22 13:17:53.954 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:53.954 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:53.988 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-22 13:17:54.012 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+May-22 13:17:54.375 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastP` matches process FastP
+May-22 13:17:54.381 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:54.382 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:54.415 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Host` matches process Kraken2Host
+May-22 13:17:54.429 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:54.430 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:54.466 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Taxonomy` matches process Kraken2Taxonomy
+May-22 13:17:54.472 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:54.472 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:54.520 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaTools` matches process KronaTools
+May-22 13:17:54.525 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:54.526 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:54.549 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MetaSPAdes` matches process MetaSPAdes
+May-22 13:17:54.552 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-22 13:17:54.553 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 13:17:54.582 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
+May-22 13:17:54.630 [main] INFO  nextflow.script.BaseScript - DataflowVariable(value=null)
+May-22 13:17:54.635 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Kraken2Taxonomy, KronaTools, MetaSPAdes, FastP, FastQC, Kraken2Host
+May-22 13:17:54.644 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
+May-22 13:17:54.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastQC
+May-22 13:17:54.676 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/; pattern: *_R{1,2}.fastq.gz; options: [checkIfExists:true]
+May-22 13:17:54.685 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastP
+May-22 13:17:54.690 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Host
+May-22 13:17:54.692 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Taxonomy
+May-22 13:17:54.693 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaTools
+May-22 13:17:54.693 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MetaSPAdes
+May-22 13:17:54.694 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-22 13:17:54.694 [main] DEBUG nextflow.Session - Session await
+May-22 13:17:55.741 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:17:55.751 [Task submitter] INFO  nextflow.Session - [a9/4bf1fb] Submitted process > FastP (SRR28624259)
+May-22 13:17:55.878 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [cf/ff3524] Cached process > FastQC (SRR28624259)
+May-22 13:17:56.018 [Actor Thread 7] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-22 13:19:28.715 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FastP (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/a9/4bf1fb69c8b261dba8a9983e22db70]
+May-22 13:19:28.784 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:19:28.786 [Task submitter] INFO  nextflow.Session - [44/5fe62d] Submitted process > Kraken2Host (SRR28624259)
+May-22 13:20:08.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Kraken2Host (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/44/5fe62dba09084881782f4a60161792]
+May-22 13:20:08.264 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:20:08.266 [Task submitter] INFO  nextflow.Session - [0c/e9e645] Submitted process > MetaSPAdes (SRR28624259)
+May-22 13:20:08.289 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:20:08.292 [Task submitter] INFO  nextflow.Session - [c7/85bbb1] Submitted process > Kraken2Taxonomy (SRR28624259)
+May-22 13:20:48.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: Kraken2Taxonomy (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/c7/85bbb1b60a14320217f96275198856]
+May-22 13:20:48.954 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 13:20:48.960 [Task submitter] INFO  nextflow.Session - [5d/e25acf] Submitted process > KronaTools (SRR28624259)
+May-22 13:22:37.065 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: KronaTools (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/5d/e25acfa367aaca11902a2a3f0e82fa]
+May-22 13:22:54.210 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
+May-22 13:27:54.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
+May-22 13:32:07.489 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
+May-22 13:32:07.500 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-22 13:32:07.503 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-22 13:32:07.512 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+May-22 13:32:07.528 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=1; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=16m 40s; failedDuration=0ms; cachedDuration=1m 3s;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+May-22 13:32:07.736 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-22 13:32:07.778 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+May-22 13:32:07.780 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

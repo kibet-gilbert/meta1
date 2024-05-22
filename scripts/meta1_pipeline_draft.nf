@@ -3,7 +3,6 @@
 nextflow.enable.dsl=2
 
 params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/*_R{1,2}.fastq.gz'
-//params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
 reads = Channel.fromFilePairs(params.reads, checkIfExists:true)
 println(reads.view())
 params.kraken2_db_human = '/home/gkibet/bioinformatics/training/meta1/data/databases/kraken2_human_db/'
@@ -144,14 +143,12 @@ process MetaSPAdes {
 
     output:
     tuple val(sample_id), path("*_contigs.fasta"), emit: contigs
-    tuple val(sample_id), path("*_scaffolds.fasta"), emit: scaffolds
-    tuple val(sample_id), path("*_graph.gfa"), emit: graphgfa
-    tuple val(sample_id), path("*.log"), emit: spadeslog
+   // path "${params.outputDir}/metaspades/"
 
     script:
     """
     spades.py \\
-        --meta \\
+        --isolate \\
         --threads 4 \\
         --memory 8 \\
         -1 ${nohost_reads[0]} \\
@@ -164,44 +161,41 @@ process MetaSPAdes {
     """
 }
 
-process Kraken2Contigs {
-    tag "$sample_id"
+// process Kraken2Contigs {
+//     publishDir "${params.outputDir}/kraken2", mode: 'copy'
     
-    input:
-    tuple val(sample_id), path(contigs)
-    path(kraken2_db_viral)
+//     input:
+//     path contigs_fasta from MetaSPAdes.out[2]
 
-    output:
-    tuple val(sample_id), path("*_kreport.txt"), emit: kraken_viral_report1
-    tuple val(sample_id), path("*_kraken2.out"), emit: kraken_viral_report2
+//     output:
+//     path "${params.outputDir}/kraken2/SRR28624259_taxContigs_kraken2.out"
 
-    script:
-    """
-    kraken2 --db ${kraken2_db_viral} --threads 4 \\
-            --report ${sample_id}_taxContigs_kreport.txt \\
-            --output ${sample_id}_taxContigs_kraken2.out \\
-            --report-zero-counts $contigs
-    """
-}
+//     script:
+//     """
+//     kraken2 --db ${params.kraken2_db_viral} --threads 4 \
+//             --report ${params.outputDir}/kraken2/SRR28624259_taxContigs_kreport.txt \
+//             --output ${params.outputDir}/kraken2/SRR28624259_taxContigs_kraken2.out \
+//             --report-zero-counts $contigs_fasta
+//     """
+// }
 
-process KronaContigs {
-    tag "$sample_id"
+// process KronaContigs {
+//     publishDir "${params.outputDir}/krona", mode: 'copy'
     
-    input:
-    tuple val(sample_id), path(kraken_viral_report2)
-    path(taxonomy)
+//     input:
+//     path kraken2_contigs_output from Kraken2Contigs.out
 
-    output:
-    tuple val(sample_id), path("*.html"), emit: kronacontigs_html
+//     output:
+//     path "${params.outputDir}/krona/SRR28624259_taxContigs_taxonomy.krona.html"
 
-    script:
-    """
-    cat $kraken_viral_report2 | cut -f 2,3 > ${sample_id}_taxContigs_kraken2.krona
-    ktImportTaxonomy -tax ${taxonomy} \
-                     -o ${sample_id}_taxContigs_taxonomy.krona.html \
-                     ${sample_id}_taxContigs_kraken2.krona
-    """
-}
+//     script:
+//     """
+//     cat $kraken2_contigs_output | cut -f 2,3 > ${params.outputDir}/krona/SRR28624259_taxContigs_kraken2.krona
+//     ktImportTaxonomy -tax ${params.krona_db_taxonomy} \
+//                      -o ${params.outputDir}/krona/SRR28624259_taxContigs_taxonomy.krona.html \
+//                      ${params.outputDir}/krona/SRR28624259_taxContigs_kraken2.krona
+//     """
+// }
 
 // Workflow definition
 workflow {
@@ -213,7 +207,7 @@ workflow {
     MetaSPAdes(Kraken2Host.out.nohost_reads)
     // println(Kraken2Host.out.nohost_reads.view())
     // println(Kraken2Host.out.nohost_reads.collect().view())
-    Kraken2Contigs(MetaSPAdes.out.contigs,kraken2_db_viral)
-    KronaContigs(Kraken2Contigs.out.kraken_viral_report2,taxonomy)
+    // Kraken2Contigs()
+    // KronaContigs()
 }
 

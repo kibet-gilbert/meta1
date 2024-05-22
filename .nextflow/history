@@ -37,3 +37,11 @@
 2024-05-22 13:13:16	55.7s	nauseous_kalam	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
 2024-05-22 13:14:36	2m 58s	crazy_heisenberg	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
 2024-05-22 13:17:48	14m 20s	romantic_kay	OK	bf50fabaea611983f9e7bb81268639cc	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 14:25:37	15m 41s	astonishing_church	OK	7c7e7c23a9189416f3c723fa60cb046e	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 14:41:58	-	pensive_curran	-	ba1c96e97ba04d6ced55eb2d0e760646	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 14:43:25	11s	clever_poincare	OK	2753c6b9a3c84d0aaabb64009849781d	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 15:01:30	-	sleepy_church	-	9aeb00beb5724e2a2a8aff8362a037f7	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 15:02:34	20.1s	focused_tuckerman	OK	0c4339c2a0d62b70f73f40567f7604aa	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-22 15:22:35	1m 20s	ridiculous_edison	ERR	9d89ca6df99fadc6513aa349d2e5cd44	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf '--reads=/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz' -resume
+2024-05-22 15:26:38	1m 21s	distracted_miescher	OK	956e88351c70b2a7ab0e8a259d851818	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf '--reads=/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz' -resume
+2024-05-22 15:28:32	1m 33s	maniac_ampere	OK	956e88351c70b2a7ab0e8a259d851818	ab40291d-e917-4157-9d32-db721ad3cb5b	nextflow run scripts/meta1_pipeline_draft.nf '--reads=/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'

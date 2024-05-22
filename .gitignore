@@ -1,4 +1,4 @@
-./results00
+./results*
 ./data/databases/*
 ./data/fastq/raw-data/*
 ./work/*

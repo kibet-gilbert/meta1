@@ -2,16 +2,17 @@ Bootstrap: docker
 From: continuumio/miniconda3
 
 %files
-    meta1_env.yml
+    meta1_environment.yaml
 
 %post
     #git clone https://github.com/artic-network/fieldbioinformatics
     #cd fieldbioinformatics && python setup.py install
     #conda install mamba
-    /opt/conda/bin/conda env create -f meta1_env.yml
+    /opt/conda/bin/conda env create -f meta1_environment.yaml
     NOW=`date`
-    meta1version="`date +"%Y.%m.%d"`_Vmeta1image"
+    meta1version="meta1_sif.V`date +"%Y.%m.%d"`"
     echo "export NOW=\"${NOW}\"" >> $APPTAINER_ENVIRONMENT
+    rm -rf /opt/conda/envs/meta1/opt/krona/taxonomy
 
 %environment
     export PATH=/opt/conda/bin:$PATH
@@ -28,10 +29,10 @@ From: continuumio/miniconda3
     kraken2 -v
     spades.py -v
     metaspades.py -v
-    run_MaxBin.pl -v
     DAS_Tool -v
     CAT -v
-    ktUpdateiTaxonomy.sh -h
+    run_MaxBin.pl -h
+    ktUpdateTaxonomy.sh -h
     metabat2 -h
     checkm2
 
@@ -55,4 +56,3 @@ From: continuumio/miniconda3
     DAS_Tool		Refines Bins: integrates results from multiple binning algorithms to an optimized, non-redundant set of bins from a single assembly
     CAT			Contig Annotation Tool (CAT) - taxonomic classification (long DNA sequences, MAGs / bins) of known and highly unknown microorganisms
 
-    

@@ -12,11 +12,11 @@ From: continuumio/miniconda3
     NOW=`date`
     meta1version="meta1_sif.V`date +"%Y.%m.%d"`"
     echo "export NOW=\"${NOW}\"" >> $APPTAINER_ENVIRONMENT
-    rm -rf /opt/conda/envs/meta1/opt/krona/taxonomy
+    rm -rf /opt/conda/envs/magviral/opt/krona/taxonomy
 
 %environment
     export PATH=/opt/conda/bin:$PATH
-    export PATH=/opt/conda/envs/meta1/bin:$PATH
+    export PATH=/opt/conda/envs/magviral/bin:$PATH
     export $meta1version
 
 %runscript

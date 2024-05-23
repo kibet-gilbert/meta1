@@ -1,98 +1,286 @@
-May-22 13:17:43.126 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -resume
-May-22 13:17:43.564 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
-May-22 13:17:43.671 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
-May-22 13:17:43.716 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-May-22 13:17:43.720 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-May-22 13:17:43.735 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-May-22 13:17:43.786 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-May-22 13:17:43.881 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
-May-22 13:17:43.885 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
-May-22 13:17:44.041 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-May-22 13:17:47.936 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
-May-22 13:17:48.018 [main] INFO  nextflow.cli.CmdRun - Launching `scripts/meta1_pipeline_draft.nf` [romantic_kay] DSL2 - revision: bf50fabaea
-May-22 13:17:48.020 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-May-22 13:17:48.020 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-May-22 13:17:48.066 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/gkibet/.nextflow/secrets/store.json
-May-22 13:17:48.084 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1b6924cb] - activable => nextflow.secret.LocalSecretsProvider@1b6924cb
-May-22 13:17:48.360 [main] DEBUG nextflow.Session - Session UUID: 6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21
-May-22 13:17:48.361 [main] DEBUG nextflow.Session - Run name: romantic_kay
-May-22 13:17:48.363 [main] DEBUG nextflow.Session - Executor pool size: 8
-May-22 13:17:48.414 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-May-22 13:17:48.527 [main] DEBUG nextflow.cli.CmdRun - 
+May-23 14:24:25.150 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume '--reads=data/fastq/raw-data2/*_R{1,2}.fastq.gz'
+May-23 14:24:25.494 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+May-23 14:24:25.581 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+May-23 14:24:25.625 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-23 14:24:25.630 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-23 14:24:25.644 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+May-23 14:24:25.688 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-23 14:24:25.778 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-23 14:24:25.781 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-23 14:24:25.892 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-23 14:24:28.350 [main] DEBUG nextflow.config.ConfigBuilder - Enabling execution in Apptainer container as requested by command-line option `-with-apptainer null`
+May-23 14:24:28.380 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+May-23 14:24:28.448 [main] INFO  nextflow.cli.CmdRun - Launching `scripts/meta1_pipeline_draft.nf` [awesome_caravaggio] DSL2 - revision: 5a3c1187b7
+May-23 14:24:28.449 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-23 14:24:28.450 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-23 14:24:28.488 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/gkibet/.nextflow/secrets/store.json
+May-23 14:24:28.502 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1e253c9d] - activable => nextflow.secret.LocalSecretsProvider@1e253c9d
+May-23 14:24:28.705 [main] DEBUG nextflow.Session - Session UUID: 8592585a-20b8-4252-ae9d-2136ba9e2c04
+May-23 14:24:28.706 [main] DEBUG nextflow.Session - Run name: awesome_caravaggio
+May-23 14:24:28.708 [main] DEBUG nextflow.Session - Executor pool size: 8
+May-23 14:24:28.747 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-23 14:24:28.837 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 23.04.3 build 5875
   Created: 11-08-2023 18:37 UTC (21:37 EAST)
   System: Linux 6.5.0-28-generic
-  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 17.0.10+7-Ubuntu-122.04.1
   Encoding: UTF-8 (UTF-8)
-  Process: 378040@ilri [127.0.1.1]
-  CPUs: 8 - Mem: 15.4 GB (2.3 GB) - Swap: 2 GB (4.9 MB)
-May-22 13:17:48.711 [main] DEBUG nextflow.Session - Work-dir: /home/gkibet/bioinformatics/training/meta1/work [ext2/ext3]
-May-22 13:17:48.712 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/gkibet/bioinformatics/training/meta1/scripts/bin
-May-22 13:17:48.765 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-May-22 13:17:48.818 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-May-22 13:17:48.929 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-May-22 13:17:48.987 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-May-22 13:17:49.636 [main] DEBUG nextflow.Session - Session start
-May-22 13:17:52.861 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-May-22 13:17:53.345 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
-May-22 13:17:53.902 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastQC` matches process FastQC
-May-22 13:17:53.954 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:53.954 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:53.988 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-May-22 13:17:54.012 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
-May-22 13:17:54.375 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastP` matches process FastP
-May-22 13:17:54.381 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:54.382 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:54.415 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Host` matches process Kraken2Host
-May-22 13:17:54.429 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:54.430 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:54.466 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Taxonomy` matches process Kraken2Taxonomy
-May-22 13:17:54.472 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:54.472 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:54.520 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaTools` matches process KronaTools
-May-22 13:17:54.525 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:54.526 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:54.549 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MetaSPAdes` matches process MetaSPAdes
-May-22 13:17:54.552 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:17:54.553 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:17:54.582 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
-May-22 13:17:54.630 [main] INFO  nextflow.script.BaseScript - DataflowVariable(value=null)
-May-22 13:17:54.635 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Kraken2Taxonomy, KronaTools, MetaSPAdes, FastP, FastQC, Kraken2Host
-May-22 13:17:54.644 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
-May-22 13:17:54.680 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastQC
-May-22 13:17:54.676 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/; pattern: *_R{1,2}.fastq.gz; options: [checkIfExists:true]
-May-22 13:17:54.685 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastP
-May-22 13:17:54.690 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Host
-May-22 13:17:54.692 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Taxonomy
-May-22 13:17:54.693 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaTools
-May-22 13:17:54.693 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MetaSPAdes
-May-22 13:17:54.694 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-May-22 13:17:54.694 [main] DEBUG nextflow.Session - Session await
-May-22 13:17:55.741 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:17:55.751 [Task submitter] INFO  nextflow.Session - [a9/4bf1fb] Submitted process > FastP (SRR28624259)
-May-22 13:17:55.878 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [cf/ff3524] Cached process > FastQC (SRR28624259)
-May-22 13:17:56.018 [Actor Thread 7] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-May-22 13:19:28.715 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FastP (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/a9/4bf1fb69c8b261dba8a9983e22db70]
-May-22 13:19:28.784 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:19:28.786 [Task submitter] INFO  nextflow.Session - [44/5fe62d] Submitted process > Kraken2Host (SRR28624259)
-May-22 13:20:08.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Kraken2Host (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/44/5fe62dba09084881782f4a60161792]
-May-22 13:20:08.264 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:20:08.266 [Task submitter] INFO  nextflow.Session - [0c/e9e645] Submitted process > MetaSPAdes (SRR28624259)
-May-22 13:20:08.289 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:20:08.292 [Task submitter] INFO  nextflow.Session - [c7/85bbb1] Submitted process > Kraken2Taxonomy (SRR28624259)
-May-22 13:20:48.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: Kraken2Taxonomy (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/c7/85bbb1b60a14320217f96275198856]
-May-22 13:20:48.954 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:20:48.960 [Task submitter] INFO  nextflow.Session - [5d/e25acf] Submitted process > KronaTools (SRR28624259)
-May-22 13:22:37.065 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: KronaTools (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/5d/e25acfa367aaca11902a2a3f0e82fa]
-May-22 13:22:54.210 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
-~> TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
-May-22 13:27:54.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
-~> TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
-May-22 13:32:07.489 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/0c/e9e64559daa1cd1ee6a3201897cb92]
-May-22 13:32:07.500 [main] DEBUG nextflow.Session - Session await > all processes finished
-May-22 13:32:07.503 [main] DEBUG nextflow.Session - Session await > all barriers passed
-May-22 13:32:07.512 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
-May-22 13:32:07.528 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=1; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=16m 40s; failedDuration=0ms; cachedDuration=1m 3s;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
-May-22 13:32:07.736 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-May-22 13:32:07.778 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
-May-22 13:32:07.780 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+  Process: 439955@ilri [127.0.1.1]
+  CPUs: 8 - Mem: 15.4 GB (3.2 GB) - Swap: 2 GB (7.1 MB)
+May-23 14:24:28.975 [main] DEBUG nextflow.Session - Work-dir: /home/gkibet/bioinformatics/training/meta1/work [ext2/ext3]
+May-23 14:24:28.976 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/gkibet/bioinformatics/training/meta1/scripts/bin
+May-23 14:24:29.011 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-23 14:24:29.047 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-23 14:24:29.125 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-23 14:24:29.160 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+May-23 14:24:29.452 [main] DEBUG nextflow.Session - Session start
+May-23 14:24:31.778 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-23 14:24:32.044 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
+May-23 14:24:32.337 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastQC` matches process FastQC
+May-23 14:24:32.369 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.370 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.391 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-23 14:24:32.406 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+May-23 14:24:32.662 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastP` matches process FastP
+May-23 14:24:32.667 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.668 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.694 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Host` matches process Kraken2Host
+May-23 14:24:32.700 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.700 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.727 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Taxonomy` matches process Kraken2Taxonomy
+May-23 14:24:32.736 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.737 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.771 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaTools` matches process KronaTools
+May-23 14:24:32.776 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.777 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.810 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MetaSPAdes` matches process MetaSPAdes
+May-23 14:24:32.817 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.817 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.846 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Contigs` matches process Kraken2Contigs
+May-23 14:24:32.851 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.852 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.875 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaContigs` matches process KronaContigs
+May-23 14:24:32.880 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-23 14:24:32.880 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-23 14:24:32.895 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Kraken2Taxonomy, KronaTools, MetaSPAdes, FastP, KronaContigs, FastQC, Kraken2Host, Kraken2Contigs
+May-23 14:24:32.898 [main] DEBUG nextflow.Session - Igniting dataflow network (12)
+May-23 14:24:32.914 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: data/fastq/raw-data2/; pattern: *_R{1,2}.fastq.gz; options: [checkIfExists:true]
+May-23 14:24:32.919 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastQC
+May-23 14:24:32.923 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastP
+May-23 14:24:32.924 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Host
+May-23 14:24:32.925 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Taxonomy
+May-23 14:24:32.927 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaTools
+May-23 14:24:32.928 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MetaSPAdes
+May-23 14:24:32.929 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Contigs
+May-23 14:24:32.930 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaContigs
+May-23 14:24:32.930 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-23 14:24:32.931 [main] DEBUG nextflow.Session - Session await
+May-23 14:24:33.578 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:24:33.584 [Task submitter] INFO  nextflow.Session - [70/005345] Submitted process > FastQC (testData1)
+May-23 14:24:33.616 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:24:33.617 [Task submitter] INFO  nextflow.Session - [4e/4013cc] Submitted process > FastP (testData1)
+May-23 14:29:32.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 1; name: FastQC (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/70/005345f9e5807851556afab206690b]
+~> TaskHandler[id: 2; name: FastP (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/4e/4013cc132bd43647b83ab548be4940]
+May-23 14:31:44.781 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: FastQC (testData1); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/70/005345f9e5807851556afab206690b]
+May-23 14:31:44.962 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-23 14:33:16.557 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FastP (testData1); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/4e/4013cc132bd43647b83ab548be4940]
+May-23 14:33:16.620 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:33:16.625 [Task submitter] INFO  nextflow.Session - [ad/43877f] Submitted process > Kraken2Host (testData1)
+May-23 14:34:32.591 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: Kraken2Host (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/ad/43877fb9a77aa4b618cd2d7cd60fe4]
+May-23 14:36:03.198 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Kraken2Host (testData1); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/ad/43877fb9a77aa4b618cd2d7cd60fe4]
+May-23 14:36:03.252 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:36:03.254 [Task submitter] INFO  nextflow.Session - [e7/1f46a9] Submitted process > MetaSPAdes (testData1)
+May-23 14:36:03.277 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:36:03.280 [Task submitter] INFO  nextflow.Session - [c7/9bed5b] Submitted process > Kraken2Taxonomy (testData1)
+May-23 14:36:46.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: Kraken2Taxonomy (testData1); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/c7/9bed5bc1fc3c9e7f4c4048298bd17b]
+May-23 14:36:47.010 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-23 14:36:47.036 [Task submitter] INFO  nextflow.Session - [da/10e0a8] Submitted process > KronaTools (testData1)
+May-23 14:39:18.130 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: KronaTools (testData1); status: COMPLETED; exit: 0; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/da/10e0a87bb3db3ac1bdb42ca71d092e]
+May-23 14:39:32.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 14:44:32.678 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 14:49:32.692 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 14:54:32.694 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 14:59:32.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:04:32.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:09:32.932 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:14:32.983 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:19:33.029 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:24:33.053 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:29:33.143 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:34:33.242 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:39:33.282 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:44:33.360 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:49:33.381 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:54:33.419 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 15:59:33.461 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 16:04:33.497 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 16:09:33.530 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 16:14:33.599 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 16:19:33.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 17:09:28.222 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 17:14:28.278 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: MetaSPAdes (testData1); status: RUNNING; exit: -; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 17:18:44.378 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: MetaSPAdes (testData1); status: COMPLETED; exit: 250; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125]
+May-23 17:18:44.399 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MetaSPAdes (testData1); work-dir=/home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125
+  error [nextflow.exception.ProcessFailedException]: Process `MetaSPAdes (testData1)` terminated with an error exit status (250)
+May-23 17:18:44.456 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'MetaSPAdes (testData1)'
+
+Caused by:
+  Process `MetaSPAdes (testData1)` terminated with an error exit status (250)
+
+Command executed:
+
+  spades.py \
+      --meta \
+      --threads 4 \
+      --memory 8 \
+      -1 testData1.nohost_1.fastq \
+      -2 testData1.nohost_2.fastq \
+      -o .
+  mv assembly_graph_with_scaffolds.gfa SPAdes-testData1_graph.gfa
+  mv scaffolds.fasta SPAdes-testData1_scaffolds.fasta
+  mv contigs.fasta SPAdes-testData1_contigs.fasta
+  mv spades.log SPAdes-testData1.log
+
+Command exit status:
+  250
+
+Command output:
+    0:06:41.743   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    0:07:17.241   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    0:07:17.423   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+    0:08:52.129   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 963575 reads
+    0:09:02.615   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  95)   Total 1018175 reads processed
+    0:09:02.943   446M / 1835M INFO    General                 (pair_info_count.cpp       : 220)   Edge pairs: 110472168
+    0:09:02.943   446M / 1835M INFO    General                 (pair_info_count.cpp       : 222)   1851 paired reads (0.181796% of all) aligned to long edges
+    0:09:02.944   366M / 1835M INFO    General                 (pair_info_count.cpp       : 369)     Insert size = 255.093, deviation = 130.422, left quantile = 106, right quantile = 431, read length = 301
+    0:09:02.944   366M / 1835M WARN    General                 (pair_info_count.cpp       : 376)   Estimated mean insert size 255.093 is very small compared to read length 301
+    0:09:03.210   686M / 1835M INFO    General                 (pair_info_count.cpp       : 390)   Filtering data for library #0
+    0:09:03.210   686M / 1835M INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+    0:09:27.455   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    0:16:02.066   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    0:16:24.651   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+    0:32:07.370   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 963575 reads
+    0:33:44.958   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  95)   Total 1018175 reads processed
+    0:33:44.958   686M / 1835M INFO    General                 (pair_info_count.cpp       : 402)   Mapping library #0
+    0:33:44.959   686M / 1835M INFO    General                 (pair_info_count.cpp       : 404)   Mapping paired reads (takes a while)
+    0:33:44.959   686M / 1835M INFO    General                 (pair_info_count.cpp       : 299)   Left insert size quantile 106, right insert size quantile 431, filtering threshold 1, rounding threshold 0
+    0:33:44.970   695M / 1835M INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+    0:34:13.942   720M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    1:43:35.644  1490M / 7183M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    1:45:11.099  2299M / 7378M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+  mimalloc: error: unable to allocate OS memory (268435456 bytes, error code: 12 [Cannot allocate memory], address: (nil), large only: 0, allow large: 1)
+  mimalloc: process info:
+     elapsed:    6588.173 s
+     process: user: 9316.596 s, system: 29.973 s, faults: 109
+         rss: current: 8309452800, peak: 8268087296
+      commit: current: 8309452800, peak: 8309452800
+  
+  
+  == Error ==  system call for: "['/opt/conda/envs/meta1/bin/spades-core', 'K55/configs/config.info', 'K55/configs/mda_mode.info', 'K55/configs/meta_mode.info']" finished abnormally, OS return value: -6
+  None
+  
+  ======= SPAdes pipeline finished abnormally and WITH WARNINGS!
+  
+  === Error correction and assembling warnings:
+   * 0:09:02.944   366M / 1835M WARN    General                 (pair_info_count.cpp       : 376)   Estimated mean insert size 255.093 is very small compared to read length 301
+  ======= Warnings saved to warnings.log
+  
+  === ERRORs:
+   * system call for: "['/opt/conda/envs/meta1/bin/spades-core', 'K55/configs/config.info', 'K55/configs/mda_mode.info', 'K55/configs/meta_mode.info']" finished abnormally, OS return value: -6
+  
+  In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+  or report an issue on our GitHub repository github.com/ablab/spades
+  Please provide us with params.txt and spades.log files from the output directory.
+  
+  SPAdes log can be found here: spades.log
+  
+  Thank you for using SPAdes!
+
+Command error:
+    0:06:41.743   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    0:07:17.241   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    0:07:17.423   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+    0:08:52.129   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 963575 reads
+    0:09:02.615   446M / 1835M INFO    General                 (sequence_mapper_notifier.h:  95)   Total 1018175 reads processed
+    0:09:02.943   446M / 1835M INFO    General                 (pair_info_count.cpp       : 220)   Edge pairs: 110472168
+    0:09:02.943   446M / 1835M INFO    General                 (pair_info_count.cpp       : 222)   1851 paired reads (0.181796% of all) aligned to long edges
+    0:09:02.944   366M / 1835M INFO    General                 (pair_info_count.cpp       : 369)     Insert size = 255.093, deviation = 130.422, left quantile = 106, right quantile = 431, read length = 301
+    0:09:02.944   366M / 1835M WARN    General                 (pair_info_count.cpp       : 376)   Estimated mean insert size 255.093 is very small compared to read length 301
+    0:09:03.210   686M / 1835M INFO    General                 (pair_info_count.cpp       : 390)   Filtering data for library #0
+    0:09:03.210   686M / 1835M INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+    0:09:27.455   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    0:16:02.066   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    0:16:24.651   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+    0:32:07.370   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 963575 reads
+    0:33:44.958   686M / 1835M INFO    General                 (sequence_mapper_notifier.h:  95)   Total 1018175 reads processed
+    0:33:44.958   686M / 1835M INFO    General                 (pair_info_count.cpp       : 402)   Mapping library #0
+    0:33:44.959   686M / 1835M INFO    General                 (pair_info_count.cpp       : 404)   Mapping paired reads (takes a while)
+    0:33:44.959   686M / 1835M INFO    General                 (pair_info_count.cpp       : 299)   Left insert size quantile 106, right insert size quantile 431, filtering threshold 1, rounding threshold 0
+    0:33:44.970   695M / 1835M INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+    0:34:13.942   720M / 1835M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+    1:43:35.644  1490M / 7183M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 454600 reads
+    1:45:11.099  2299M / 7378M INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 654600 reads
+  mimalloc: error: unable to allocate OS memory (268435456 bytes, error code: 12 [Cannot allocate memory], address: (nil), large only: 0, allow large: 1)
+  mimalloc: process info:
+     elapsed:    6588.173 s
+     process: user: 9316.596 s, system: 29.973 s, faults: 109
+         rss: current: 8309452800, peak: 8268087296
+      commit: current: 8309452800, peak: 8309452800
+  
+  
+  == Error ==  system call for: "['/opt/conda/envs/meta1/bin/spades-core', 'K55/configs/config.info', 'K55/configs/mda_mode.info', 'K55/configs/meta_mode.info']" finished abnormally, OS return value: -6
+  None
+  
+  ======= SPAdes pipeline finished abnormally and WITH WARNINGS!
+  
+  === Error correction and assembling warnings:
+   * 0:09:02.944   366M / 1835M WARN    General                 (pair_info_count.cpp       : 376)   Estimated mean insert size 255.093 is very small compared to read length 301
+  ======= Warnings saved to warnings.log
+  
+  === ERRORs:
+   * system call for: "['/opt/conda/envs/meta1/bin/spades-core', 'K55/configs/config.info', 'K55/configs/mda_mode.info', 'K55/configs/meta_mode.info']" finished abnormally, OS return value: -6
+  
+  In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+  or report an issue on our GitHub repository github.com/ablab/spades
+  Please provide us with params.txt and spades.log files from the output directory.
+  
+  SPAdes log can be found here: spades.log
+  
+  Thank you for using SPAdes!
+
+Work dir:
+  /home/gkibet/bioinformatics/training/meta1/work/e7/1f46a9edf1fd2dadd7ecbc36322125
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+May-23 17:18:44.467 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `MetaSPAdes (testData1)` terminated with an error exit status (250)
+May-23 17:18:44.470 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-23 17:18:44.576 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-23 17:18:44.620 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=21m 55s; failedDuration=2h 42m 41s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+May-23 17:18:44.743 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-23 17:18:44.821 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

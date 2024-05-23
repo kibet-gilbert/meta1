@@ -1,126 +1,51 @@
-May-22 13:00:00.005 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -resume
-May-22 13:00:00.312 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
-May-22 13:00:00.422 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
-May-22 13:00:00.469 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-May-22 13:00:00.473 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-May-22 13:00:00.488 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-May-22 13:00:00.534 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-May-22 13:00:00.634 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
-May-22 13:00:00.638 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
-May-22 13:00:00.753 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-May-22 13:00:03.582 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
-May-22 13:00:03.673 [main] INFO  nextflow.cli.CmdRun - Launching `scripts/meta1_pipeline_draft.nf` [adoring_kare] DSL2 - revision: 48b97605f6
-May-22 13:00:03.675 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-May-22 13:00:03.675 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-May-22 13:00:03.723 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/gkibet/.nextflow/secrets/store.json
-May-22 13:00:03.743 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1b6924cb] - activable => nextflow.secret.LocalSecretsProvider@1b6924cb
-May-22 13:00:04.062 [main] DEBUG nextflow.Session - Session UUID: 6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21
-May-22 13:00:04.062 [main] DEBUG nextflow.Session - Run name: adoring_kare
-May-22 13:00:04.065 [main] DEBUG nextflow.Session - Executor pool size: 8
-May-22 13:00:04.117 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-May-22 13:00:04.211 [main] DEBUG nextflow.cli.CmdRun - 
-  Version: 23.04.3 build 5875
-  Created: 11-08-2023 18:37 UTC (21:37 EAST)
-  System: Linux 6.5.0-28-generic
-  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
-  Encoding: UTF-8 (UTF-8)
-  Process: 375361@ilri [127.0.1.1]
-  CPUs: 8 - Mem: 15.4 GB (1.7 GB) - Swap: 2 GB (5.1 MB)
-May-22 13:00:04.358 [main] DEBUG nextflow.Session - Work-dir: /home/gkibet/bioinformatics/training/meta1/work [ext2/ext3]
-May-22 13:00:04.359 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/gkibet/bioinformatics/training/meta1/scripts/bin
-May-22 13:00:04.408 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-May-22 13:00:04.459 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-May-22 13:00:04.553 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-May-22 13:00:04.598 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-May-22 13:00:05.110 [main] DEBUG nextflow.Session - Session start
-May-22 13:00:07.818 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-May-22 13:00:08.163 [main] INFO  nextflow.script.BaseScript - DataflowBroadcast around DataflowStream[?]
-May-22 13:00:08.514 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastQC` matches process FastQC
-May-22 13:00:08.549 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:08.550 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:08.572 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-May-22 13:00:08.589 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
-May-22 13:00:08.886 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FastP` matches process FastP
-May-22 13:00:08.893 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:08.894 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:08.928 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Host` matches process Kraken2Host
-May-22 13:00:08.936 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:08.936 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:08.972 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:Kraken2Taxonomy` matches process Kraken2Taxonomy
-May-22 13:00:08.979 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:08.980 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:09.029 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KronaTools` matches process KronaTools
-May-22 13:00:09.032 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:09.032 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:09.055 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MetaSPAdes` matches process MetaSPAdes
-May-22 13:00:09.058 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-May-22 13:00:09.058 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-May-22 13:00:09.079 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Kraken2Taxonomy, KronaTools, MetaSPAdes, FastP, FastQC, Kraken2Host
-May-22 13:00:09.085 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
-May-22 13:00:09.112 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/; pattern: *_R{1,2}.fastq.gz; options: [checkIfExists:true]
-May-22 13:00:09.119 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastQC
-May-22 13:00:09.127 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FastP
-May-22 13:00:09.131 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Host
-May-22 13:00:09.134 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Kraken2Taxonomy
-May-22 13:00:09.135 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KronaTools
-May-22 13:00:09.140 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MetaSPAdes
-May-22 13:00:09.142 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-May-22 13:00:09.142 [main] DEBUG nextflow.Session - Session await
-May-22 13:00:10.020 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [cf/ff3524] Cached process > FastQC (SRR28624259)
-May-22 13:00:10.020 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [9b/f9f865] Cached process > FastP (SRR28624259)
-May-22 13:00:10.155 [Actor Thread 6] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-May-22 13:00:10.161 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [36/0ca376] Cached process > Kraken2Host (SRR28624259)
-May-22 13:00:10.274 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [72/203972] Cached process > Kraken2Taxonomy (SRR28624259)
-May-22 13:00:10.384 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [7e/94db1c] Cached process > KronaTools (SRR28624259)
-May-22 13:00:10.461 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-May-22 13:00:10.467 [Task submitter] INFO  nextflow.Session - [84/ec1672] Submitted process > MetaSPAdes (SRR28624259)
-May-22 13:00:11.406 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: MetaSPAdes (SRR28624259); status: COMPLETED; exit: 2; error: -; workDir: /home/gkibet/bioinformatics/training/meta1/work/84/ec167215b81761b218d0f54651a646]
-May-22 13:00:11.426 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=MetaSPAdes (SRR28624259); work-dir=/home/gkibet/bioinformatics/training/meta1/work/84/ec167215b81761b218d0f54651a646
-  error [nextflow.exception.ProcessFailedException]: Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (2)
-May-22 13:00:11.473 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'MetaSPAdes (SRR28624259)'
-
-Caused by:
-  Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (2)
-
-Command executed:
-
-  spades.py --isolate --threads 4 --memory 8 \
-            -1 SRR28624259.nohost_1.fastq SRR28624259.nohost_2.fastq[1] \
-            -2 SRR28624259.nohost_1.fastq SRR28624259.nohost_2.fastq[2] \
-            -o ./
-  mv assembly_graph_with_scaffolds.gfa SPAdes-SRR28624259_graph.gfa
-  mv scaffolds.fasta SPAdes-SRR28624259_scaffolds.fasta
-  mv contigs.fasta SPAdes-SRR28624259_contigs.fasta
-  mv spades.log SPAdes-SRR28624259.log
-
-Command exit status:
-  2
-
-Command output:
-  
-  
-  == Warning ==  output dir is not empty! Please, clean output directory before run.
-  
-
-Command error:
-  
-  
-  == Warning ==  output dir is not empty! Please, clean output directory before run.
-  
-  
-  SPAdes genome assembler v3.15.5
-  
-  Usage: spades.py [options] -o <output_dir>
-  spades.py: error: Please specify option (e.g. -1, -2, -s, etc)) for the following paths: SRR28624259.nohost_2.fastq[1], SRR28624259.nohost_2.fastq[2]
-
-Work dir:
-  /home/gkibet/bioinformatics/training/meta1/work/84/ec167215b81761b218d0f54651a646
-
-Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
-May-22 13:00:11.482 [main] DEBUG nextflow.Session - Session await > all processes finished
-May-22 13:00:11.491 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `MetaSPAdes (SRR28624259)` terminated with an error exit status (2)
-May-22 13:00:11.569 [main] DEBUG nextflow.Session - Session await > all barriers passed
-May-22 13:00:11.616 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=5; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=858ms; cachedDuration=4m 41s;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
-May-22 13:00:11.738 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-May-22 13:00:11.798 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+May-23 12:59:36.479 [main] DEBUG nextflow.cli.Launcher - $> nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer -resume
+May-23 12:59:36.824 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+May-23 12:59:36.901 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/gkibet/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+May-23 12:59:36.935 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-23 12:59:36.938 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-23 12:59:36.949 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+May-23 12:59:36.982 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-23 12:59:37.042 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-23 12:59:37.044 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/gkibet/bioinformatics/training/meta1/nextflow.config
+May-23 12:59:37.115 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-23 12:59:39.469 [main] DEBUG nextflow.config.ConfigBuilder - Enabling execution in Apptainer container as requested by command-line option `-with-apptainer null`
+May-23 12:59:39.488 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: You have requested to run with Apptainer but no image was specified
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.config.ConfigBuilder.configContainer(ConfigBuilder.groovy:774)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at nextflow.config.ConfigBuilder.configRunOptions(ConfigBuilder.groovy:746)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at nextflow.config.ConfigBuilder.buildConfigObject(ConfigBuilder.groovy:806)
+	at nextflow.config.ConfigBuilder.build(ConfigBuilder.groovy:816)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:321)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)

@@ -37,3 +37,17 @@
 2024-05-22 13:13:16	55.7s	nauseous_kalam	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
 2024-05-22 13:14:36	2m 58s	crazy_heisenberg	ERR	19a56c3d67d72acf632dd65c04f0546c	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
 2024-05-22 13:17:48	14m 20s	romantic_kay	OK	bf50fabaea611983f9e7bb81268639cc	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-23 08:55:15	37s	fervent_stonebraker	ERR	956e88351c70b2a7ab0e8a259d851818	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-23 08:58:16	11m 53s	deadly_newton	OK	9d89ca6df99fadc6513aa349d2e5cd44	6aceaaeb-e5d0-4393-aed1-ff6b4bbb9b21	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-23 09:14:55	1m 5s	nostalgic_raman	ERR	9d89ca6df99fadc6513aa349d2e5cd44	70e311ca-dba9-4d86-b3db-cae70d6d086b	nextflow run scripts/meta1_pipeline_draft.nf '--reads=./data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
+2024-05-23 09:17:06	1m 13s	elegant_engelbart	OK	956e88351c70b2a7ab0e8a259d851818	70e311ca-dba9-4d86-b3db-cae70d6d086b	nextflow run scripts/meta1_pipeline_draft.nf '--reads=./data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz' -resume
+2024-05-23 09:21:56	20m 16s	angry_jepsen	OK	53b282c12f7fe1f25aec552d17631bd1	70e311ca-dba9-4d86-b3db-cae70d6d086b	nextflow run scripts/meta1_pipeline_draft.nf -resume
+2024-05-23 10:11:14	1h 57m 28s	sick_perlman	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf '--reads=./data/fastq/raw-data2/*_R{1,2}.fastq.gz'
+2024-05-23 12:20:40	8m 16s	voluminous_gates	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf '--reads=./data/fastq/raw-data2/*_R{1,2}.fastq.gz' -resume
+2024-05-23 13:04:26	2m 4s	evil_gilbert	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume
+2024-05-23 13:08:27	2m	determined_cantor	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume
+2024-05-23 13:18:23	36s	maniac_mahavira	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume
+2024-05-23 13:20:52	11m 36s	amazing_booth	OK	f7dee36effb6349157e003dd30b5a71b	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume
+2024-05-23 13:56:32	1m 25s	sleepy_saha	OK	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume '--reads=data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
+2024-05-23 13:58:35	19m 25s	curious_leakey	OK	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume '--reads=data/fastq/raw-data/*_S2_L001_R{1,2}_001.fastq.gz'
+2024-05-23 14:24:28	2h 54m 17s	awesome_caravaggio	ERR	5a3c1187b73c73ccf0969aaa87cd1859	8592585a-20b8-4252-ae9d-2136ba9e2c04	nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume '--reads=data/fastq/raw-data2/*_R{1,2}.fastq.gz'

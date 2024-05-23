@@ -1,4 +1,6 @@
 ./results*
+./scripts/bbmap/*
+./data/fastq/hev_data/*
 ./data/databases/*
 ./data/fastq/raw-data/*
 ./work/*

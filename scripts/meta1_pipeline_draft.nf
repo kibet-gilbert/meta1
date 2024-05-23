@@ -3,6 +3,7 @@
 nextflow.enable.dsl=2
 
 params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/*_R{1,2}.fastq.gz'
+//params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_S2_L001_R{1,2}_001.fastq.gz'
 //params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
 reads = Channel.fromFilePairs(params.reads, checkIfExists:true)
 println(reads.view())
@@ -14,9 +15,6 @@ kraken2_db_viral = Channel.fromPath(params.kraken2_db_viral, checkIfExists:true)
 
 params.taxonomy='/home/gkibet/bioinformatics/training/meta1/data/databases/kronaDB/taxonomy/'
 taxonomy = Channel.fromPath(params.taxonomy, checkIfExists:true)
-
-
-
 
 // params.krona_db_taxonomy = './data/databases/kronaDB/taxonomy'
 // params.outputDir = './results'

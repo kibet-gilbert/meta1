@@ -73,15 +73,24 @@ metaspades.py \
         gzip "SPAdes-${meta.id}_graph.gfa"
         gzip -c "SPAdes-${meta.id}_scaffolds.fasta" > "SPAdes-${meta.id}_scaffolds.fasta.gz"
 # maxbin2:
-mkdir input/ && mv $contigs input/
-    run_MaxBin.pl \\
-        -contig input/$contigs \\
-        $associate_files \\
-        -thread $task.cpus \\
-        $args \\
-        -out $prefix
+#mkdir input/ && mv $contigs input/
+#    run_MaxBin.pl \\
+#        -contig input/$contigs \\
+#        $associate_files \\
+#        -thread $task.cpus \\
+#        $args \\
+#        -out $prefix
+#
+#    gzip *.fasta *.noclass *.tooshort *log *.marker
 
-    gzip *.fasta *.noclass *.tooshort *log *.marker
+# metabat2:
+metabat2 \\
+        $args \\
+        -i $fasta \\
+        $depth_file \\
+        -t $task.cpus \\
+        --saveCls \\
+        -o ${prefix}
 
 # Das tool (Bin-refinement Optional):
 DAS_Tool \\

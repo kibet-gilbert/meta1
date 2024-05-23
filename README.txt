@@ -42,9 +42,10 @@ step7: build an singularity/apptainer image
 	$ apptainer build ./scripts/magviral_apptainer.sif ./scripts/magviral_apptainer.def
 
 step8: Deploy the image with different test data:
-	$ ~/Downloads/Programs/nextflow run scripts/magviral.nf -with-apptainer ./magviral_apptainer.sif -resume
-	$ ~/Downloads/Programs/nextflow run scripts/magviral.nf -with-apptainer ./magviral_apptainer.sif -resume --reads='data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
-	$ ~/Downloads/Programs/nextflow run scripts/magviral_pipeline_draft.nf -with-apptainer ./magviral_apptainer.sif -resume --reads='data/fastq/raw-data2/*_R{1,2}.fastq.gz'
+	$ ~/Downloads/Programs/nextflow run ./scripts/magviral.nf -with-apptainer ./scripts/magviral_apptainer.sif -resume
+	$ ~/Downloads/Programs/nextflow run ./scripts/magviral.nf -with-apptainer ./scripts/magviral_apptainer.sif -resume --reads='data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
+	$ ~/Downloads/Programs/nextflow run ./scripts/magviral.nf -with-apptainer ./scripts/magviral_apptainer.sif -resume --reads='data/fastq/raw-data2/*_R{1,2}.fastq.gz'
+	$ ~/Downloads/Programs/nextflow run ./scripts/magviral.nf -with-apptainer ./scripts/magviral_apptainer.sif -resume --reads='data/fastq/hev_data/*_S*_con_R{1,2}_001.fastq.gz'
 
 Comments: Notable challenges or errors
 --------------------------------------

@@ -1,7 +1,9 @@
 Analysis of metagenomics data (shotgun)
+---------------------------------------
 Steps:
+-----
 step1: Project dir set up:
-	mkdir -p ./results{fastqc,fastp,kraken2,metaspades,maxbin,checkm,krona,pavian}
+	$ mkdir -p ./results{fastqc,fastp,kraken2,metaspades,maxbin,checkm,krona,pavian}
 
 step2: Environment set-up
 	- mamba installation:
@@ -28,5 +30,16 @@ step8: Deploy the image with different test data:
 	$ ~/Downloads/Programs/nextflow run scripts/meta1_pipeline_draft.nf -with-apptainer ./meta1_apptainer.sif -resume --reads='data/fastq/raw-data2/*_R{1,2}.fastq.gz'
 
 Comments: Notable challenges or errors
-- 
+--------------------------------------
+- Dataset sizes:
+	- Fastq file sizes in metagenomics are large (>500Mb) - We eneded up using smaller sample isolate shotgun data
+	- Classification databases are large and needs fast internet speeds - used small viral-only database 
 
+- Some processes fail due to different reasons:
+	- Binning fails where contigs are too few, or taxonomic diverity in the data is too low
+	- krona visualization can fail due to "too many taxIds"
+	- kraken2 filteration of host reads fails though very rarely due to unknown reasons***
+
+- Some processes take so much resources (memory/time)
+	- spades assembly - MAG (metagenomic assembly of Genomes) needs lots of RAM and takes long made more challenging by fastq file size.
+	- kraken2 taxonomic classification can also take a lot of RAM where the database is large. memory mapping can help resolve it but is slow

@@ -5,3 +5,4 @@
 ./data/fastq/raw-data/*
 ./work/*
 ./.nextflow*
+./.nextflow/*

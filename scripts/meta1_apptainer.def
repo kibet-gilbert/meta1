@@ -1,5 +1,4 @@
 Bootstrap: docker
-
 From: continuumio/miniconda3
 
 %files
@@ -11,11 +10,13 @@ From: continuumio/miniconda3
     #conda install mamba
     /opt/conda/bin/conda env create -f meta1_env.yml
     NOW=`date`
+    meta1version=${NOW}V_meta1
     echo "export NOW=\"${NOW}\"" >> $APPTAINER_ENVIRONMENT
 
 %environment
     export PATH=/opt/conda/bin:$PATH
     export PATH=/opt/conda/envs/meta1/bin:$PATH
+    export $meta1version
 
 %runscript
     echo "Created on $NOW"
@@ -29,17 +30,18 @@ From: continuumio/miniconda3
 
 %labels
     Author kibet-gilbert
-    Version $articversion
+    Version $meta1version
 
 %help
     Singularity container for shotgun metagenomics meta1
     Apps available:
-    artic basecaller          Display basecallers in files
-    artic demultiplex         Run demultiplex
-    artic minion              Run the alignment/variant-call/consensus pipeline
-    artic gather              Gather up demultiplexed files
-    artic guppyplex           Aggregate pre-demultiplexed reads from MinKNOW/Guppy
-    artic filter              Filter FASTQ files by length
-    artic rampart             Interactive prompts to start RAMPART
-    artic export              Export reads and fAST5 into a neat archive
-    artic run                 Process an entire run folder interactively
+    fastp		Display basecallers in files
+    fastqc		Run demultiplex
+    kraken2		Run the alignment/variant-call/consensus pipeline
+    ktImportTaxonomy	Gather up demultiplexed files
+    spades.py		Assembly of the genomes
+    metaspades.py	Assembly pf metagenomes (Same as: spades.py --meta)
+    checkm2		Predict the completeness and contamination of genome bins
+    run_MaxBin
+    metabat2
+    

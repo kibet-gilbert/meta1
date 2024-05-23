@@ -4,3 +4,4 @@
 ./data/databases/*
 ./data/fastq/raw-data/*
 ./work/*
+./.nextflow*

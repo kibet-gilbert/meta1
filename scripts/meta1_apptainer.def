@@ -10,7 +10,7 @@ From: continuumio/miniconda3
     #conda install mamba
     /opt/conda/bin/conda env create -f meta1_env.yml
     NOW=`date`
-    meta1version=${NOW}V_meta1
+    meta1version="`date +"%Y.%m.%d"`_Vmeta1image"
     echo "export NOW=\"${NOW}\"" >> $APPTAINER_ENVIRONMENT
 
 %environment
@@ -24,24 +24,35 @@ From: continuumio/miniconda3
 
 %test
     fastp -v
-    fastqc -h
-    kraken2 -h
-    ktUpdateTaxonomy.sh -h
+    fastqc -v
+    kraken2 -v
+    spades.py -v
+    metaspades.py -v
+    run_MaxBin.pl -v
+    DAS_Tool -v
+    CAT -v
+    ktUpdateiTaxonomy.sh -h
+    metabat2 -h
+    checkm2
 
 %labels
-    Author kibet-gilbert
-    Version $meta1version
+    Author: kibet-gilbert
+    Version: $meta1version
 
 %help
     Singularity container for shotgun metagenomics meta1
     Apps available:
-    fastp		Display basecallers in files
-    fastqc		Run demultiplex
-    kraken2		Run the alignment/variant-call/consensus pipeline
-    ktImportTaxonomy	Gather up demultiplexed files
+    fastp		Trim and removes adapters from fastq files
+    fastqc		QCs the fastq files and outputs a html file
+    kraken2		Performs taxonomic classification of reads and contigs
+    ktUpdateTaxonomy.sh	Inbuilt krona tools app to build/update a krona database from NCBI taxonomy/taxdump.tar.gz
+    ktImportTaxonomy	Inbuilt krona tools app to import and create an interative pie-chart visual of taxonomic abundancies
     spades.py		Assembly of the genomes
     metaspades.py	Assembly pf metagenomes (Same as: spades.py --meta)
+    run_MaxBin.pl	MaxBin tool to perform binning of contigs/reads
+    metabat2		Bins contigs (Alternative to run_MaxBin.pl)
     checkm2		Predict the completeness and contamination of genome bins
-    run_MaxBin
-    metabat2
+    DAS_Tool		Refines Bins: integrates results from multiple binning algorithms to an optimized, non-redundant set of bins from a single assembly
+    CAT			Contig Annotation Tool (CAT) - taxonomic classification (long DNA sequences, MAGs / bins) of known and highly unknown microorganisms
+
     

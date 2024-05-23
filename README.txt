@@ -19,16 +19,27 @@ code:
 	$ mamba install -c bioconda fastp fastqc kraken2 krona checkm maxbini2 metabat2 megahit spades cat das_tool
 
 step3: Data retrival - fastq, kraken2 databases (human/viral), checkm database, krona database
+	$ cd data/databases/
+	$ wget https://ndownloader.figshare.com/files/23567780 -O kraken2_human_db.tar.gz
+	$ wget https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20240112.tar.gz 
+	$ wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
+	$ tar -xvf *.tar.gz
+	$ cd kronaDB/
+	$ wget https://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
+	$ ktUpdateTaxonomy.sh --only-build ./taxonomy
+	$ cd ../../../
 
 step4: create bash script step-by-step and test (scripts/meta1_pipeline.sh)
+	- Test one-liner commands and add that which works to the script
 
 step5: package mamba environment to .yaml
 	$ mamba env export -n magviral > magviral.yaml
 
 step6: create a singularity/apptainer definition file (scripts/magviral_apptainer.def)
+	- Design the definition file paying attention to sections: https://apptainer.org/docs/user/main/definition_files.html#sections
 
 step7: build an singularity/apptainer image
-	$ apptainer build ./scripts/meta1_apptainer.sif ./scripts/magviral_apptainer.def
+	$ apptainer build ./scripts/magviral_apptainer.sif ./scripts/magviral_apptainer.def
 
 step8: Deploy the image with different test data:
 	$ ~/Downloads/Programs/nextflow run scripts/magviral.nf -with-apptainer ./magviral_apptainer.sif -resume

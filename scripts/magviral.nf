@@ -7,10 +7,10 @@ params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/test-data/*_
 //params.reads='/home/gkibet/bioinformatics/training/meta1/data/fastq/raw-data/*_L001_R{1,2}_001.fastq.gz'
 reads = Channel.fromFilePairs(params.reads, checkIfExists:true)
 println(reads.view())
-params.kraken2_db_human = '/home/gkibet/bioinformatics/training/meta1/data/databases/kraken2_human_db/'
+params.kraken2_db_human='/home/gkibet/bioinformatics/training/meta1/data/databases/kraken2_human_db/'
 kraken2_db_human = Channel.fromPath(params.kraken2_db_human, checkIfExists:true)
 
-params.kraken2_db_viral = './data/databases/k2_viral_20240112/'
+params.kraken2_db='./data/databases/k2_viral_20240112/'
 kraken2_db_viral = Channel.fromPath(params.kraken2_db_viral, checkIfExists:true)
 
 params.taxonomy='/home/gkibet/bioinformatics/training/meta1/data/databases/kronaDB/taxonomy/'
@@ -94,16 +94,16 @@ process Kraken2Taxonomy {
     
     input:
     tuple val(sample_id), path(nohost_reads)
-    path(kraken2_db_viral)
+    path(kraken2_db)
 
     output:
     tuple val(sample_id), path("*.classified{.,_}*"), emit: classified_reads
-    tuple val(sample_id), path("*_kreport.txt"), emit: kraken_viral_report1
-    tuple val(sample_id), path("*_kraken2.out"), emit: kraken_viral_report2
+    tuple val(sample_id), path("*_kreport.txt"), emit: kraken_kreport
+    tuple val(sample_id), path("*_kraken2.out"), emit: kraken_report
 
     script:
     """
-    kraken2 --db ${kraken2_db_viral} --threads 4 \\
+    kraken2 --db ${kraken2_db} --threads 4 \\
             --unclassified-out ${sample_id}.unclassified#.fastq \\
             --classified-out ${sample_id}.classified#.fastq \\
             --report ${sample_id}_tax_kreport.txt \\
@@ -116,7 +116,7 @@ process KronaTools {
     tag "$sample_id"  
     
     input:
-    tuple val(sample_id), path(kraken_viral_report2)
+    tuple val(sample_id), path(kraken_report)
     path(taxonomy)
     
     output:
@@ -127,7 +127,7 @@ process KronaTools {
     //wget https://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz -O ${params.krona_db_taxonomy}/taxdump.tar.gz
     //ktUpdateTaxonomy.sh --only-build ${params.krona_db_taxonomy}
     """    
-    cat $kraken_viral_report2 | cut -f 2,3 > ${sample_id}_kraken2.krona
+    cat $kraken_report | cut -f 2,3 > ${sample_id}_kraken2.krona
     ktImportTaxonomy -tax ${taxonomy} \\
                      -o ${sample_id}_taxonomy.krona.html \\
                      ${sample_id}_kraken2.krona

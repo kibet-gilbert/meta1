@@ -3,7 +3,7 @@ Analysis of viral metagenomics shotgun data
 
 pipeline name: magviral
 workflow manager: nextflow
-environment manager: conda/singularity
+environment manager: conda/singularity(apptainer)
 
 Steps:
 -----

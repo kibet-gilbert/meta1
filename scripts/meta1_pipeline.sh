@@ -76,31 +76,28 @@ metaspades.py \
 #mkdir input/ && mv $contigs input/
 #    run_MaxBin.pl \\
 #        -contig input/$contigs \\
-#        $associate_files \\
+#        -reads ${reads[0]} \\
+#        -reads2 ${reads[1]} \\
+#        --plotmarker \\
 #        -thread $task.cpus \\
-#        $args \\
 #        -out $prefix
-#
-#    gzip *.fasta *.noclass *.tooshort *log *.marker
 
 # metabat2:
-metabat2 \\
-        $args \\
-        -i $fasta \\
-        $depth_file \\
-        -t $task.cpus \\
-        --saveCls \\
-        -o ${prefix}
+#metabat2 \\
+#        $args \\
+#        -i $contigs.fasta \\
+#        -m 1500 \\
+#        -t $task.cpus \\
+#        --saveCls \\
+#        -o ${prefix}
 
 # Das tool (Bin-refinement Optional):
-DAS_Tool \\
-        $args \\
-        $proteins_pred \\
-        $db_dir \\
-        -t $task.cpus \\
-        -i $bin_list \\
-        -c $clean_contigs \\
-        -o $prefix
+#DAS_Tool \\
+#        -t $task.cpus \\
+#        -i $bin_list \\
+#        -c $clean_contigs \\
+#        -o $prefix
+
 # checkm:
 checkm \\
         qa \\
